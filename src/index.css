@@ -1,15 +1,17 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
 
 @theme {
   --color-cream: #FAF7F2;
-  --color-cream-dark: #F0EBE3;
-  --color-charcoal: #1C1C1C;
-  --color-charcoal-light: #4A4A4A;
-  --color-charcoal-muted: #7A7A7A;
+  --color-cream-dark: #ECE2D5;
+  --color-cream-soft: #F8F1E7;
+  --color-charcoal: #16120F;
+  --color-charcoal-light: #2F2723;
+  --color-charcoal-muted: #6F6257;
   --color-terracotta: #C1440E;
-  --color-terracotta-dark: #A33A0C;
+  --color-terracotta-dark: #7F2B08;
   --color-terracotta-light: #E8734A;
+  --color-terracotta-soft: #F29A79;
   --color-sage: #7A9E7E;
   --color-sage-light: #A8C5AB;
   --color-sage-dark: #5C7E60;
@@ -27,7 +29,7 @@
 /* Base resets */
 * {
   margin: 0;
-  padding: 0;
+  padding: 2px;
   box-sizing: border-box;
 }
 
@@ -37,17 +39,30 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-cream);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(193, 68, 14, 0.12), transparent 38%),
+    radial-gradient(circle at 80% 0%, rgba(122, 158, 126, 0.12), transparent 30%),
+    var(--color-cream);
   color: var(--color-charcoal);
-  line-height: 1.6;
+  line-height: 1.72;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+p {
+  font-size: 1.02rem;
+}
+
+::selection {
+  background: rgba(193, 68, 14, 0.2);
+  color: var(--color-charcoal);
 }
 
 /* Scrollbar styling */

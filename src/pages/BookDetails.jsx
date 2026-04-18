@@ -69,7 +69,7 @@ export default function BookDetails({ books }) {
       {/* Back Button */}
       <button
         onClick={() => navigate("/")}
-        className="inline-flex items-center gap-2 text-charcoal-muted hover:text-terracotta font-body text-sm font-medium mb-8 transition-colors duration-200 cursor-pointer bg-transparent border-none group"
+        className="inline-flex items-center gap-2 text-charcoal-muted hover:text-terracotta font-body text-sm font-medium mb-8 transition-colors duration-200 cursor-pointer bg-warm-white border border-warm-border rounded-xl px-4 py-2.5 shadow-sm group"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export default function BookDetails({ books }) {
       </button>
 
       {/* Book Details */}
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12 items-start">
         {/* Cover Image */}
         <div className="lg:w-80 flex-shrink-0">
           <div className="sticky top-24">
@@ -106,26 +106,26 @@ export default function BookDetails({ books }) {
         </div>
 
         {/* Details */}
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 text-center">
           {/* Genre Chip */}
           <span className="inline-block bg-sage-light/30 text-sage-dark text-xs font-body font-medium px-3 py-1 rounded-full mb-3">
             {book.genre}
           </span>
 
           {/* Title */}
-          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-charcoal mb-2 leading-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-charcoal mb-2.5 leading-tight">
             {book.title}
           </h1>
 
           {/* Author */}
-          <p className="font-body text-lg text-charcoal-muted mb-4">
+          <p className="font-body text-lg text-charcoal-muted mb-5">
             by{" "}
             <span className="text-charcoal font-medium">{book.author}</span>
           </p>
 
           {/* Rating Summary */}
           {reviews.length > 0 && (
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-3 mb-6">
               <StarDisplay rating={avgRating} />
               <span className="font-body text-sm text-charcoal-muted">
                 {avgRating}/5 · {reviews.length}{" "}
@@ -135,7 +135,7 @@ export default function BookDetails({ books }) {
           )}
 
           {/* Price / Exchange */}
-          <div className="mb-6">
+          <div className="mb-6 flex justify-center">
             {book.exchange ? (
               <div className="inline-flex items-center gap-2 bg-sage-light/20 text-sage-dark font-body font-semibold text-lg px-5 py-2.5 rounded-xl border border-sage-light/40">
                 <svg
@@ -170,16 +170,16 @@ export default function BookDetails({ books }) {
           </div>
 
           {/* Seller Info Card */}
-          <div className="bg-warm-white rounded-xl border border-warm-border p-6">
+          <div className="bg-warm-white rounded-2xl border border-warm-border p-7 shadow-card max-w-xl mx-auto">
             <h3 className="font-heading text-lg font-semibold text-charcoal mb-4">
               Seller Information
             </h3>
 
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-center justify-center gap-4 mb-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center text-white font-body font-bold text-lg">
                 {book.seller.name.charAt(0)}
               </div>
-              <div>
+              <div className="text-center">
                 <p className="font-body font-semibold text-charcoal">
                   {book.seller.name}
                 </p>
@@ -192,7 +192,7 @@ export default function BookDetails({ books }) {
             {/* Contact toggle */}
             <button
               onClick={() => setShowContact(!showContact)}
-              className="w-full py-3 bg-terracotta text-white font-body font-semibold text-sm rounded-lg hover:bg-terracotta-dark transition-all duration-300 hover:shadow-lg cursor-pointer flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-gradient-to-r from-terracotta to-terracotta-dark text-white font-body font-semibold text-sm rounded-xl hover:from-terracotta-dark hover:to-terracotta transition-all duration-300 hover:shadow-xl cursor-pointer flex items-center justify-center gap-2"
             >
               {showContact ? (
                 <>
@@ -231,7 +231,7 @@ export default function BookDetails({ books }) {
                 showContact ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="space-y-2 bg-cream-dark rounded-lg p-4">
+              <div className="space-y-2 bg-cream-dark rounded-xl p-4">
                 <div className="flex items-center gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -266,7 +266,7 @@ export default function BookDetails({ books }) {
       </div>
 
       {/* Reviews Section */}
-      <div className="border-t border-warm-border pt-10">
+      <div className="border-t border-warm-border pt-10 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-heading text-2xl font-bold text-charcoal mb-8">
             Reviews ({reviews.length})
@@ -280,7 +280,7 @@ export default function BookDetails({ books }) {
 
             {/* Review Form */}
             <div className="lg:w-80 flex-shrink-0">
-              <div className="bg-warm-white rounded-xl border border-warm-border p-6 lg:sticky lg:top-24">
+              <div className="bg-warm-white rounded-2xl border border-warm-border p-6 lg:sticky lg:top-24 shadow-card">
                 <h3 className="font-heading text-lg font-semibold text-charcoal mb-4">
                   Write a Review
                 </h3>

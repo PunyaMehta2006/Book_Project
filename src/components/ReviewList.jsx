@@ -34,9 +34,9 @@ export default function ReviewList({ reviews }) {
       {reviews.map((review) => (
         <div
           key={review.id}
-          className="bg-warm-white rounded-xl border border-warm-border p-5 transition-all duration-200 hover:shadow-card"
+          className="bg-warm-white rounded-xl border border-warm-border p-5 transition-all duration-200 hover:shadow-card text-center"
         >
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex flex-col items-center justify-center mb-2 gap-2">
             <div className="flex items-center gap-3">
               {/* Avatar */}
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center text-white font-body font-bold text-sm">
@@ -48,7 +48,7 @@ export default function ReviewList({ reviews }) {
             </div>
             <StarDisplay rating={review.rating} />
           </div>
-          <p className="font-body text-charcoal-light text-sm leading-relaxed pl-12">
+          <p className="font-body text-charcoal-light text-sm leading-relaxed">
             {review.comment}
           </p>
         </div>

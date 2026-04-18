@@ -81,7 +81,7 @@ export default function AddBook({ onAddBook }) {
   };
 
   const inputClasses = (field) =>
-    `w-full px-4 py-3 rounded-lg border font-body text-sm bg-warm-white text-charcoal placeholder:text-charcoal-muted/50 outline-none transition-all duration-200 focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta ${
+    `w-full px-4 py-3.5 rounded-xl border font-body text-sm bg-warm-white text-charcoal placeholder:text-charcoal-muted/50 outline-none transition-all duration-200 focus:ring-4 focus:ring-terracotta/10 focus:border-terracotta ${
       errors[field]
         ? "border-red-400 ring-2 ring-red-100"
         : "border-warm-border"
@@ -115,7 +115,7 @@ export default function AddBook({ onAddBook }) {
         <h1 className="font-heading text-3xl sm:text-4xl font-bold text-charcoal mb-2">
           List a Book
         </h1>
-        <p className="font-body text-charcoal-muted">
+        <p className="font-body text-charcoal-muted text-base">
           Share a book you'd like to sell or exchange
         </p>
       </div>
@@ -123,13 +123,13 @@ export default function AddBook({ onAddBook }) {
       {/* Form */}
       <form
         onSubmit={handleSubmit}
-        className="bg-warm-white rounded-2xl border border-warm-border p-6 sm:p-8 shadow-card space-y-6"
+        className="bg-warm-white rounded-2xl border border-warm-border p-7 sm:p-9 shadow-card space-y-6 text-center"
       >
         {/* Title */}
         <div>
           <label
             htmlFor="add-title"
-            className="block font-body text-sm font-medium text-charcoal mb-1.5"
+            className="block font-body text-sm font-semibold text-charcoal mb-1.5"
           >
             Book Title <span className="text-terracotta">*</span>
           </label>
@@ -148,7 +148,7 @@ export default function AddBook({ onAddBook }) {
         <div>
           <label
             htmlFor="add-author"
-            className="block font-body text-sm font-medium text-charcoal mb-1.5"
+            className="block font-body text-sm font-semibold text-charcoal mb-1.5"
           >
             Author <span className="text-terracotta">*</span>
           </label>
@@ -167,7 +167,7 @@ export default function AddBook({ onAddBook }) {
         <div>
           <label
             htmlFor="add-genre"
-            className="block font-body text-sm font-medium text-charcoal mb-1.5"
+            className="block font-body text-sm font-semibold text-charcoal mb-1.5"
           >
             Genre <span className="text-terracotta">*</span>
           </label>
@@ -188,7 +188,7 @@ export default function AddBook({ onAddBook }) {
         </div>
 
         {/* Exchange Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-center gap-3">
           <label className="relative inline-flex items-center cursor-pointer">
             <input
               type="checkbox"
@@ -209,7 +209,7 @@ export default function AddBook({ onAddBook }) {
           <div>
             <label
               htmlFor="add-price"
-              className="block font-body text-sm font-medium text-charcoal mb-1.5"
+              className="block font-body text-sm font-semibold text-charcoal mb-1.5"
             >
               Price (₹) <span className="text-terracotta">*</span>
             </label>
@@ -230,7 +230,7 @@ export default function AddBook({ onAddBook }) {
         <div>
           <label
             htmlFor="add-description"
-            className="block font-body text-sm font-medium text-charcoal mb-1.5"
+            className="block font-body text-sm font-semibold text-charcoal mb-1.5"
           >
             Description <span className="text-terracotta">*</span>
           </label>
@@ -249,7 +249,7 @@ export default function AddBook({ onAddBook }) {
         <div>
           <label
             htmlFor="add-image"
-            className="block font-body text-sm font-medium text-charcoal mb-1.5"
+            className="block font-body text-sm font-semibold text-charcoal mb-1.5"
           >
             Cover Image URL{" "}
             <span className="text-charcoal-muted font-normal">(optional)</span>
@@ -268,7 +268,7 @@ export default function AddBook({ onAddBook }) {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full py-3.5 bg-terracotta text-white font-body font-semibold text-sm rounded-lg hover:bg-terracotta-dark transition-all duration-300 hover:shadow-lg cursor-pointer"
+          className="w-full py-4 bg-gradient-to-r from-terracotta to-terracotta-dark text-white font-body font-semibold text-sm rounded-xl hover:from-terracotta-dark hover:to-terracotta transition-all duration-300 hover:shadow-xl cursor-pointer"
         >
           List This Book
         </button>

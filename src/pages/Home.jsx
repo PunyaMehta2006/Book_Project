@@ -30,7 +30,7 @@ export default function Home({ books }) {
   return (
     <div className="animate-fade-up">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-cream-dark to-cream py-12 sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-cream-soft via-cream-dark to-cream py-14 sm:py-18 lg:py-24">
         {/* Decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 left-10 w-32 h-32 bg-terracotta/5 rounded-full blur-3xl"></div>
@@ -39,21 +39,21 @@ export default function Home({ books }) {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal mb-4 leading-tight">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal mb-5 leading-tight">
             Give your books a<br />
             <span className="text-terracotta italic">second life.</span>
           </h1>
-          <p className="font-body text-charcoal-light text-lg sm:text-xl max-w-2xl mx-auto mb-8">
+          <p className="font-body text-charcoal-light text-lg sm:text-xl max-w-2xl mx-auto mb-10">
             Discover pre-loved books from readers near you. Buy, sell, or
             exchange — one page at a time.
           </p>
 
           {/* Search Bar */}
-          <div className="max-w-xl mx-auto relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <div className="max-w-2xl mx-auto relative">
+            <div className="absolute inset-y-0 left-0 pl-10 flex items-center pointer-events-none">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-charcoal-muted"
+                className="h-5 w-7xl px-2 mr-2 text-charcoal-muted"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -69,7 +69,7 @@ export default function Home({ books }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by title or author..."
-              className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-warm-border bg-warm-white font-body text-sm text-charcoal placeholder:text-charcoal-muted/50 outline-none transition-all duration-200 focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta shadow-card"
+              className="w-full pl-12 pr-10 py-4 rounded-2xl border border-warm-border bg-warm-white/95 font-body text-base text-charcoal placeholder:text-charcoal-muted/60 outline-none transition-all duration-300 focus:ring-4 focus:ring-terracotta/15 focus:border-terracotta shadow-card hover:shadow-card-hover"
               id="search-bar"
             />
           </div>
@@ -77,11 +77,11 @@ export default function Home({ books }) {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+        <div className="flex flex-col items-center gap-8">
           {/* Sidebar - Genre Filter */}
-          <aside className="lg:w-56 flex-shrink-0">
-            <div className="lg:sticky lg:top-24">
+          <aside className="w-full">
+            <div className="max-w-4xl mx-auto px-20">
               <GenreFilter
                 activeGenre={activeGenre}
                 onGenreChange={setActiveGenre}
@@ -90,10 +90,10 @@ export default function Home({ books }) {
           </aside>
 
           {/* Book Grid */}
-          <main className="flex-1 min-w-0">
+          <main className="w-full">
             {/* Results count */}
-            <div className="flex items-center justify-between mb-6">
-              <p className="font-body text-sm text-charcoal-muted">
+            <div className="flex items-center justify-center mb-8">
+              <p className="font-body text-base text-charcoal-muted text-center">
                 Showing{" "}
                 <span className="font-semibold text-charcoal">
                   {filteredBooks.length}

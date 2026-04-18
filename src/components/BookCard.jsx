@@ -6,7 +6,7 @@ export default function BookCard({ book }) {
   return (
     <article
       onClick={() => navigate(`/book/${book.id}`)}
-      className="group cursor-pointer bg-warm-white rounded-xl border border-warm-border overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover shadow-card"
+      className="group cursor-pointer bg-warm-white/95 rounded-2xl border border-warm-border overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover shadow-card"
       role="link"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && navigate(`/book/${book.id}`)}
@@ -32,24 +32,24 @@ export default function BookCard({ book }) {
       </div>
 
       {/* Card Content */}
-      <div className="p-4">
+      <div className="p-5 text-center">
         {/* Genre Chip */}
-        <span className="inline-block bg-sage-light/30 text-sage-dark text-xs font-body font-medium px-3 py-1 rounded-full mb-2">
+        <span className="inline-block bg-sage-light/35 text-sage-dark text-xs font-body font-medium px-3.5 py-1.5 rounded-full mb-3">
           {book.genre}
         </span>
 
         {/* Title */}
-        <h3 className="font-heading text-lg font-semibold text-charcoal leading-snug mb-1 line-clamp-2 group-hover:text-terracotta transition-colors duration-300">
+        <h3 className="font-heading text-xl font-semibold text-charcoal leading-snug mb-1.5 line-clamp-2 group-hover:text-terracotta transition-colors duration-300">
           {book.title}
         </h3>
 
         {/* Author */}
-        <p className="font-body text-sm text-charcoal-muted mb-3">
+        <p className="font-body text-base text-charcoal-muted mb-4">
           by {book.author}
         </p>
 
         {/* Price or Exchange */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-center gap-3">
           {book.exchange ? (
             <span className="inline-flex items-center gap-1 text-sage-dark font-body font-semibold text-sm">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -58,22 +58,10 @@ export default function BookCard({ book }) {
               Open to Exchange
             </span>
           ) : (
-            <span className="font-heading text-xl font-bold text-terracotta">
+            <span className="font-heading text-2xl font-bold text-terracotta">
               ₹{book.price}
             </span>
           )}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 text-charcoal-muted group-hover:text-terracotta group-hover:translate-x-1 transition-all duration-300"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clipRule="evenodd"
-            />
-          </svg>
         </div>
       </div>
     </article>
