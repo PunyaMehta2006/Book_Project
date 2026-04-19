@@ -39,17 +39,17 @@ export default function Home({ books }) {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading mx-auto max-w-7xl px-1 text-center text-[clamp(1.28rem,calc(2.1vw_+_0.72rem),3.65rem)] font-bold leading-[1.12] tracking-tight text-charcoal mb-4 whitespace-nowrap">
+          <h1 className="font-heading mx-auto max-w-7xl px-1 text-center text-[clamp(1.5rem,calc(2.5vw_+_0.8rem),4.25rem)] font-bold leading-[1.12] tracking-tight text-charcoal mb-6 whitespace-nowrap">
             Give your books a{" "}
             <span className="text-terracotta italic">second life.</span>
           </h1>
-          <p className="font-body text-charcoal-light text-lg sm:text-xl max-w-xl mx-auto mb-8 text-left sm:mb-10">
+          <p className="font-body text-charcoal-light text-base sm:text-lg max-w-xl mx-auto mb-10 text-left sm:mb-12">
             Discover pre-loved books from readers near you. Buy, sell, or
             exchange — one page at a time.
           </p>
 
           {/* Search Bar — flex row; text-left overrides hero text-center */}
-          <div className="max-w-xl mx-auto mb-10 sm:mb-12">
+          <div className="max-w-xl mx-auto mb-12 sm:mb-14">
             <label
               htmlFor="search-bar"
               className="flex min-h-[3.25rem] items-center rounded-xl border border-warm-border bg-warm-white py-0 pl-4 pr-4 text-left shadow-card transition-[box-shadow,border-color] duration-200 ease-out focus-within:border-terracotta focus-within:ring-2 focus-within:ring-terracotta/15"
@@ -86,7 +86,7 @@ export default function Home({ books }) {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10 sm:pt-12 sm:pb-12 lg:pt-12 lg:pb-14">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 sm:pt-14 sm:pb-12 lg:pt-16 lg:pb-14">
         <div className="flex flex-col gap-6 sm:gap-6 lg:flex-row lg:gap-6">
           {/* Sidebar - Genre Filter */}
           <aside className="lg:w-60 flex-shrink-0">
