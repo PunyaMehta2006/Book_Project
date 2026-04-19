@@ -11,7 +11,7 @@ export default function Navbar() {
             className="flex items-center gap-2 no-underline group"
           >
             <span className="text-2xl sm:text-3xl font-heading font-bold text-charcoal tracking-tight transition-colors duration-200 ease-out group-hover:text-terracotta">
-              PageTurn
+              The Second Chapter
             </span>
             <span className="text-2xl" role="img" aria-label="book">
               📖
