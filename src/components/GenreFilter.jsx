@@ -9,22 +9,26 @@ const genres = [
 ];
 
 export default function GenreFilter({ activeGenre, onGenreChange }) {
+  const baseInactive =
+    "bg-warm-white text-charcoal border-warm-border hover:bg-cream-dark/90 hover:border-terracotta-light/50 hover:text-terracotta";
+  const baseActive =
+    "bg-terracotta text-white border-terracotta shadow-md";
+
   return (
-    <div>
-      {/* Desktop: vertical list */}
-      <div className="hidden lg:block">
-        <h3 className="font-heading text-lg font-semibold text-charcoal mb-4">
+    <div className="space-y-5 lg:space-y-0">
+      {/* Mobile/Tablet: heading + horizontal pills */}
+      <div className="lg:hidden">
+        <h3 className="font-heading text-base font-semibold text-charcoal mb-5 tracking-tight">
           Browse Genres
         </h3>
-        <div className="flex flex-col gap-2">
+        <div className="flex gap-5 overflow-x-auto genre-scroll pb-1 -mx-1 px-1">
           {genres.map((genre) => (
             <button
               key={genre}
+              type="button"
               onClick={() => onGenreChange(genre)}
-              className={`px-4 py-2.5 rounded-lg text-sm font-body font-medium text-left transition-all duration-200 cursor-pointer border ${
-                activeGenre === genre
-                  ? "bg-terracotta text-white border-terracotta shadow-md"
-                  : "bg-warm-white text-charcoal border-warm-border hover:border-terracotta-light hover:text-terracotta"
+              className={`flex-shrink-0 rounded-full border px-8 py-3.5 text-sm font-body font-medium transition-[background-color,border-color,color,box-shadow] duration-200 ease-out cursor-pointer ${
+                activeGenre === genre ? baseActive : baseInactive
               }`}
             >
               {genre}
@@ -33,17 +37,19 @@ export default function GenreFilter({ activeGenre, onGenreChange }) {
         </div>
       </div>
 
-      {/* Mobile/Tablet: horizontal scrollable pills */}
-      <div className="lg:hidden">
-        <div className="flex gap-2 overflow-x-auto genre-scroll pb-2 px-1">
+      {/* Desktop: vertical list */}
+      <div className="hidden lg:block">
+        <h3 className="font-heading text-lg font-semibold text-charcoal mb-5 tracking-tight">
+          Browse Genres
+        </h3>
+        <div className="flex flex-col gap-5">
           {genres.map((genre) => (
             <button
               key={genre}
+              type="button"
               onClick={() => onGenreChange(genre)}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-body font-medium transition-all duration-200 cursor-pointer border ${
-                activeGenre === genre
-                  ? "bg-terracotta text-white border-terracotta shadow-md"
-                  : "bg-warm-white text-charcoal border-warm-border hover:border-terracotta-light"
+              className={`rounded-xl border px-8 py-4 text-left text-sm font-body font-medium transition-[background-color,border-color,color,box-shadow] duration-200 ease-out cursor-pointer ${
+                activeGenre === genre ? baseActive : baseInactive
               }`}
             >
               {genre}
