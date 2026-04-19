@@ -65,11 +65,11 @@ export default function BookDetails({ books }) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 animate-fade-up">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-14 animate-fade-up">
       {/* Back Button */}
       <button
         onClick={() => navigate("/")}
-        className="inline-flex items-center gap-2 text-charcoal-muted hover:text-terracotta font-body text-sm font-medium mb-8 transition-colors duration-200 cursor-pointer bg-transparent border-none group"
+        className="inline-flex items-center gap-2 text-charcoal-muted hover:text-terracotta font-body text-sm font-medium mb-10 transition-colors duration-200 cursor-pointer bg-transparent border-none group"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -86,12 +86,12 @@ export default function BookDetails({ books }) {
         Back to Browse
       </button>
 
-      {/* Book Details */}
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12">
+      {/* Book Details — two-column grid on large screens */}
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(260px,320px)_minmax(0,1fr)] gap-10 xl:gap-14 items-start mb-16 lg:mb-20">
         {/* Cover Image */}
-        <div className="lg:w-80 flex-shrink-0">
+        <div className="w-full max-w-sm mx-auto lg:max-w-none lg:mx-0">
           <div className="sticky top-24">
-            <div className="bg-warm-white rounded-2xl border border-warm-border shadow-card flex items-center justify-center p-5">
+            <div className="bg-warm-white rounded-2xl border border-warm-border shadow-card flex items-center justify-center p-6 sm:p-7">
               <img
                 src={book.image}
                 alt={`Cover of ${book.title}`}
@@ -106,38 +106,39 @@ export default function BookDetails({ books }) {
         </div>
 
         {/* Details */}
-        <div className="flex-1 min-w-0">
-          {/* Genre Chip */}
-          <span className="inline-block bg-sage-light/30 text-sage-dark text-xs font-body font-medium px-3 py-1 rounded-full mb-3">
-            {book.genre}
-          </span>
+        <div className="min-w-0 flex flex-col">
+          <div className="flex flex-col items-stretch text-left">
+            {/* Genre Chip */}
+            <span className="inline-block self-start bg-sage-light/30 text-sage-dark text-xs font-body font-medium px-3 py-1.5 rounded-full mb-5">
+              {book.genre}
+            </span>
 
-          {/* Title */}
-          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-charcoal mb-2 leading-tight">
-            {book.title}
-          </h1>
+            {/* Title */}
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[2.5rem] font-bold text-charcoal mb-5 leading-[1.15] tracking-tight">
+              {book.title}
+            </h1>
 
-          {/* Author */}
-          <p className="font-body text-lg text-charcoal-muted mb-4">
-            by{" "}
-            <span className="text-charcoal font-medium">{book.author}</span>
-          </p>
+            {/* Author */}
+            <p className="font-body text-lg text-charcoal-muted mb-5">
+              by{" "}
+              <span className="text-charcoal font-medium">{book.author}</span>
+            </p>
 
-          {/* Rating Summary */}
-          {reviews.length > 0 && (
-            <div className="flex items-center gap-3 mb-6">
-              <StarDisplay rating={avgRating} />
-              <span className="font-body text-sm text-charcoal-muted">
-                {avgRating}/5 · {reviews.length}{" "}
-                {reviews.length === 1 ? "review" : "reviews"}
-              </span>
-            </div>
-          )}
+            {/* Rating Summary */}
+            {reviews.length > 0 && (
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-7">
+                <StarDisplay rating={avgRating} />
+                <span className="font-body text-sm text-charcoal-muted">
+                  {avgRating}/5 · {reviews.length}{" "}
+                  {reviews.length === 1 ? "review" : "reviews"}
+                </span>
+              </div>
+            )}
 
-          {/* Price / Exchange */}
-          <div className="mb-6">
+            {/* Price / Exchange */}
+            <div className={reviews.length > 0 ? "mb-0" : "mb-2"}>
             {book.exchange ? (
-              <div className="inline-flex items-center gap-2 bg-sage-light/20 text-sage-dark font-body font-semibold text-lg px-5 py-2.5 rounded-xl border border-sage-light/40">
+              <div className="inline-flex items-center gap-2 bg-sage-light/20 text-sage-dark font-body font-semibold text-lg px-5 py-3 rounded-xl border border-sage-light/40">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -157,43 +158,45 @@ export default function BookDetails({ books }) {
                 ₹{book.price}
               </span>
             )}
+            </div>
           </div>
 
           {/* Description */}
-          <div className="mb-8">
-            <h2 className="font-heading text-xl font-semibold text-charcoal mb-3">
+          <div className="mt-10 pt-10 border-t border-warm-border">
+            <h2 className="font-heading text-xl font-semibold text-charcoal mb-4">
               About this Book
             </h2>
-            <p className="font-body text-charcoal-light leading-relaxed">
+            <p className="font-body text-charcoal-light leading-relaxed text-base">
               {book.description}
             </p>
           </div>
 
           {/* Seller Info Card */}
-          <div className="bg-warm-white rounded-xl border border-warm-border p-6">
-            <h3 className="font-heading text-lg font-semibold text-charcoal mb-4">
+          <div className="mt-10 pt-10 border-t border-warm-border">
+            <h3 className="font-heading text-lg font-semibold text-charcoal mb-6">
               Seller Information
             </h3>
-
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center text-white font-body font-bold text-lg">
-                {book.seller.name.charAt(0)}
+            <div className="bg-warm-white rounded-xl border border-warm-border p-7 sm:p-8 shadow-card">
+              <div className="flex items-start gap-5 mb-7">
+                <div className="w-14 h-14 shrink-0 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center text-white font-body font-bold text-lg">
+                  {book.seller.name.charAt(0)}
+                </div>
+                <div className="min-w-0 pt-0.5 space-y-1.5">
+                  <p className="font-body font-semibold text-charcoal text-base">
+                    {book.seller.name}
+                  </p>
+                  <p className="font-body text-sm text-charcoal-muted">
+                    Verified Seller
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="font-body font-semibold text-charcoal">
-                  {book.seller.name}
-                </p>
-                <p className="font-body text-sm text-charcoal-muted">
-                  Verified Seller
-                </p>
-              </div>
-            </div>
 
             {/* Contact toggle */}
-            <button
-              onClick={() => setShowContact(!showContact)}
-              className="w-full py-3 bg-terracotta text-white font-body font-semibold text-sm rounded-lg hover:bg-terracotta-dark transition-all duration-300 hover:shadow-lg cursor-pointer flex items-center justify-center gap-2"
-            >
+            <div className="flex justify-center">
+              <button
+                onClick={() => setShowContact(!showContact)}
+                className="w-full max-w-xs py-2.5 px-5 bg-terracotta text-white font-body font-semibold text-sm rounded-lg hover:bg-terracotta-dark transition-all duration-300 hover:shadow-lg cursor-pointer inline-flex items-center justify-center gap-2"
+              >
               {showContact ? (
                 <>
                   <svg
@@ -223,15 +226,16 @@ export default function BookDetails({ books }) {
                   Contact Seller
                 </>
               )}
-            </button>
+              </button>
+            </div>
 
             {/* Contact details with smooth reveal */}
             <div
               className={`overflow-hidden transition-all duration-400 ease-in-out ${
-                showContact ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
+                showContact ? "max-h-40 opacity-100 mt-6" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="space-y-2 bg-cream-dark rounded-lg p-4">
+              <div className="space-y-3 bg-cream-dark rounded-lg p-4 sm:p-5">
                 <div className="flex items-center gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -261,27 +265,28 @@ export default function BookDetails({ books }) {
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Reviews Section */}
-      <div className="border-t border-warm-border pt-10">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-heading text-2xl font-bold text-charcoal mb-8">
+      <div className="border-t border-warm-border pt-12 lg:pt-14">
+        <div className="w-full">
+          <h2 className="font-heading text-2xl font-bold text-charcoal mb-10">
             Reviews ({reviews.length})
           </h2>
 
-          <div className="flex flex-col lg:flex-row gap-10">
+          <div className="flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-14 xl:gap-16">
             {/* Review List */}
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <ReviewList reviews={reviews} />
             </div>
 
             {/* Review Form */}
-            <div className="lg:w-80 flex-shrink-0">
-              <div className="bg-warm-white rounded-xl border border-warm-border p-6 lg:sticky lg:top-24">
-                <h3 className="font-heading text-lg font-semibold text-charcoal mb-4">
+            <div className="w-full lg:w-[22rem] shrink-0">
+              <div className="bg-warm-white rounded-xl border border-warm-border p-7 sm:p-8 shadow-card lg:sticky lg:top-24">
+                <h3 className="font-heading text-lg font-semibold text-charcoal mb-6">
                   Write a Review
                 </h3>
                 <ReviewForm onSubmit={handleReviewSubmit} />

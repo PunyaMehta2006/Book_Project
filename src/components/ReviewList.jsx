@@ -1,6 +1,6 @@
 function StarDisplay({ rating }) {
   return (
-    <div className="flex gap-0.5">
+    <div className="flex shrink-0 gap-0.5 items-center">
       {[1, 2, 3, 4, 5].map((star) => (
         <svg
           key={star}
@@ -21,7 +21,7 @@ function StarDisplay({ rating }) {
 export default function ReviewList({ reviews }) {
   if (!reviews || reviews.length === 0) {
     return (
-      <div className="text-center py-8">
+      <div className="text-center py-10 lg:py-6">
         <p className="font-body text-charcoal-muted">
           No reviews yet. Be the first to review!
         </p>
@@ -30,27 +30,28 @@ export default function ReviewList({ reviews }) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {reviews.map((review) => (
         <div
           key={review.id}
-          className="bg-warm-white rounded-xl border border-warm-border p-5 transition-all duration-200 hover:shadow-card"
+          className="bg-warm-white rounded-xl border border-warm-border p-6 sm:p-7 transition-all duration-200 hover:shadow-card"
         >
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-3">
-              {/* Avatar */}
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center text-white font-body font-bold text-sm">
-                {review.user.charAt(0).toUpperCase()}
-              </div>
-              <span className="font-body font-semibold text-charcoal">
-                {review.user}
-              </span>
+          <div className="flex gap-4 items-start">
+            <div className="w-10 h-10 shrink-0 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center text-white font-body font-bold text-sm">
+              {review.user.charAt(0).toUpperCase()}
             </div>
-            <StarDisplay rating={review.rating} />
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 mb-3">
+                <span className="font-body font-semibold text-charcoal">
+                  {review.user}
+                </span>
+                <StarDisplay rating={review.rating} />
+              </div>
+              <p className="font-body text-charcoal-light text-sm leading-relaxed">
+                {review.comment}
+              </p>
+            </div>
           </div>
-          <p className="font-body text-charcoal-light text-sm leading-relaxed pl-12">
-            {review.comment}
-          </p>
         </div>
       ))}
     </div>
