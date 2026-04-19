@@ -2,27 +2,31 @@
 @import "tailwindcss";
 
 @theme {
-  /* Soft page + surfaces — muted contrast */
-  --color-cream: #f8f6f3;
-  --color-cream-dark: #ebe8e2;
-  --color-charcoal: #2d2b29;
-  --color-charcoal-light: #5c5854;
-  --color-charcoal-muted: #8a8580;
-  --color-terracotta: #b85c38;
-  --color-terracotta-dark: #9a4d2f;
-  --color-terracotta-light: #c97a56;
-  --color-sage: #7A9E7E;
-  --color-sage-light: #A8C5AB;
-  --color-sage-dark: #5C7E60;
-  --color-warm-white: #fcfaf7;
-  --color-warm-border: #e4ddd4;
+  /* Page — soft bluish-gray (not flat white / beige) */
+  --color-cream: #e8eef6;
+  --color-cream-dark: #dbe5f2;
+  /* Body text — cool dark gray */
+  --color-charcoal: #334155;
+  --color-charcoal-light: #64748b;
+  --color-charcoal-muted: #8b9cb3;
+  /* Primary — modern sky blue (buttons, links, active) */
+  --color-terracotta: #0284c7;
+  --color-terracotta-dark: #0369a1;
+  --color-terracotta-light: #0ea5e9;
+  /* Secondary — emerald for chips / exchange (complements primary) */
+  --color-sage: #059669;
+  --color-sage-light: #a7f3d0;
+  --color-sage-dark: #047857;
+  /* Surfaces — cards lighter than page for separation */
+  --color-warm-white: #ffffff;
+  --color-warm-border: #c5d4e8;
 
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --shadow-card: 0 3px 14px rgba(45, 43, 41, 0.07), 0 1px 4px rgba(45, 43, 41, 0.05);
-  --shadow-card-hover: 0 10px 28px rgba(45, 43, 41, 0.11), 0 4px 10px rgba(45, 43, 41, 0.06);
-  --shadow-navbar: 0 1px 12px rgba(45, 43, 41, 0.06);
+  --shadow-card: 0 3px 14px rgba(51, 65, 85, 0.08), 0 1px 4px rgba(51, 65, 85, 0.05);
+  --shadow-card-hover: 0 10px 28px rgba(2, 132, 199, 0.14), 0 4px 12px rgba(51, 65, 85, 0.08);
+  --shadow-navbar: 0 1px 12px rgba(51, 65, 85, 0.07);
 }
 
 /* Base resets */
