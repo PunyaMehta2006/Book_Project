@@ -30,7 +30,7 @@ export default function Home({ books }) {
   return (
     <div className="animate-fade-up">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-cream-dark to-cream py-12 sm:py-16 lg:py-20 pb-16 sm:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-cream-dark to-cream pt-12 pb-12 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-20">
         {/* Decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 left-10 w-32 h-32 bg-terracotta/5 rounded-full blur-3xl"></div>
@@ -75,7 +75,7 @@ export default function Home({ books }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by title or author..."
-                className="w-full rounded-xl border border-warm-border bg-warm-white py-3.5 pr-4 pl-[2.625rem] font-body text-sm text-charcoal placeholder:text-charcoal-muted/55 outline-none transition-[box-shadow,border-color] duration-200 ease-out focus:border-terracotta focus:ring-2 focus:ring-terracotta/15 shadow-card"
+                className="w-full rounded-xl border border-warm-border bg-warm-white py-3.5 pr-4 pl-[3.75rem] font-body text-sm text-charcoal placeholder:text-charcoal-muted/55 outline-none transition-[box-shadow,border-color] duration-200 ease-out focus:border-terracotta focus:ring-2 focus:ring-terracotta/15 shadow-card"
               />
             </label>
           </div>
