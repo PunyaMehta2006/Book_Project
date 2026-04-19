@@ -27,7 +27,7 @@ export default function GenreFilter({ activeGenre, onGenreChange }) {
               key={genre}
               type="button"
               onClick={() => onGenreChange(genre)}
-              className={`flex-shrink-0 rounded-full border px-7 py-3.5 text-sm font-body font-medium transition-[background-color,border-color,color,box-shadow] duration-200 ease-out cursor-pointer ${
+              className={`flex-shrink-0 rounded-full border pl-9 pr-7 py-3.5 text-sm font-body font-medium transition-[background-color,border-color,color,box-shadow] duration-200 ease-out cursor-pointer ${
                 activeGenre === genre ? baseActive : baseInactive
               }`}
             >
@@ -48,7 +48,7 @@ export default function GenreFilter({ activeGenre, onGenreChange }) {
               key={genre}
               type="button"
               onClick={() => onGenreChange(genre)}
-              className={`rounded-xl border px-7 py-4 text-left text-sm font-body font-medium transition-[background-color,border-color,color,box-shadow] duration-200 ease-out cursor-pointer ${
+              className={`rounded-xl border pl-9 pr-7 py-4 text-left text-sm font-body font-medium transition-[background-color,border-color,color,box-shadow] duration-200 ease-out cursor-pointer ${
                 activeGenre === genre ? baseActive : baseInactive
               }`}
             >

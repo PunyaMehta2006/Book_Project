@@ -39,11 +39,11 @@ export default function Home({ books }) {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal mb-4 leading-tight">
-            Give your books a<br />
+          <h1 className="font-heading mx-auto max-w-7xl px-1 text-center text-[clamp(1.28rem,calc(2.1vw_+_0.72rem),3.65rem)] font-bold leading-[1.12] tracking-tight text-charcoal mb-4 whitespace-nowrap">
+            Give your books a{" "}
             <span className="text-terracotta italic">second life.</span>
           </h1>
-          <p className="font-body text-charcoal-light text-lg sm:text-xl max-w-2xl mx-auto mb-8 sm:mb-10">
+          <p className="font-body text-charcoal-light text-lg sm:text-xl max-w-xl mx-auto mb-8 text-left sm:mb-10">
             Discover pre-loved books from readers near you. Buy, sell, or
             exchange — one page at a time.
           </p>
