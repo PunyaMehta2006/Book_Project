@@ -20,7 +20,7 @@ export default function BookCard({ book }) {
           loading="lazy"
           onError={(e) => {
             e.target.src =
-              "https://via.placeholder.com/300x400/f8f6f3/2d2b29?text=No+Cover";
+              "https://via.placeholder.com/300x400/FAF7F2/1C1C1C?text=No+Cover";
           }}
         />
         {/* Exchange badge overlay */}
@@ -32,19 +32,19 @@ export default function BookCard({ book }) {
       </div>
 
       {/* Card Content */}
-      <div className="px-6 py-7 sm:px-7 sm:py-7">
+      <div className="px-8 py-9 sm:px-9 sm:py-9">
         {/* Genre Chip */}
-        <span className="mb-3 inline-block rounded-full bg-sage-light/30 px-3 py-1 font-body text-xs font-medium text-sage-dark">
+        <span className="mb-4 inline-block rounded-full bg-sage-light/30 px-3 py-1 font-body text-xs font-medium text-sage-dark">
           {book.genre}
         </span>
 
         {/* Title */}
-        <h3 className="font-heading mb-2 line-clamp-2 text-lg font-semibold leading-snug text-charcoal transition-colors duration-200 ease-out group-hover:text-terracotta">
+        <h3 className="font-heading mb-4 line-clamp-2 text-lg font-semibold leading-snug text-charcoal transition-colors duration-200 ease-out group-hover:text-terracotta">
           {book.title}
         </h3>
 
         {/* Author */}
-        <p className="font-body mb-4 text-sm text-charcoal-muted">
+        <p className="font-body mb-6 text-sm text-charcoal-muted">
           by {book.author}
         </p>
 

@@ -48,12 +48,15 @@ export default function Home({ books }) {
             exchange — one page at a time.
           </p>
 
-          {/* Search Bar — icon in fixed column so text never collides */}
+          {/* Search Bar — flex row; text-left overrides hero text-center */}
           <div className="max-w-xl mx-auto mb-10 sm:mb-12">
-            <label htmlFor="search-bar" className="relative block">
+            <label
+              htmlFor="search-bar"
+              className="flex min-h-[3.25rem] items-center rounded-xl border border-warm-border bg-warm-white py-0 pl-4 pr-4 text-left shadow-card transition-[box-shadow,border-color] duration-200 ease-out focus-within:border-terracotta focus-within:ring-2 focus-within:ring-terracotta/15"
+            >
               <span className="sr-only">Search by title or author</span>
               <span
-                className="pointer-events-none absolute left-4 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center text-charcoal-muted"
+                className="pointer-events-none flex w-10 shrink-0 items-center justify-center self-stretch text-charcoal-muted"
                 aria-hidden
               >
                 <svg
@@ -75,7 +78,7 @@ export default function Home({ books }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by title or author..."
-                className="w-full rounded-xl border border-warm-border bg-warm-white py-3.5 pr-4 pl-[3.75rem] font-body text-sm text-charcoal placeholder:text-charcoal-muted/55 outline-none transition-[box-shadow,border-color] duration-200 ease-out focus:border-terracotta focus:ring-2 focus:ring-terracotta/15 shadow-card"
+                className="min-w-0 flex-1 border-0 bg-transparent py-3.5 pl-3 pr-0 font-body text-sm text-charcoal placeholder:text-charcoal-muted/55 outline-none ring-0 focus:ring-0 appearance-none"
               />
             </label>
           </div>
@@ -83,8 +86,8 @@ export default function Home({ books }) {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-14">
-        <div className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:gap-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10 sm:pt-12 sm:pb-12 lg:pt-12 lg:pb-14">
+        <div className="flex flex-col gap-6 sm:gap-6 lg:flex-row lg:gap-6">
           {/* Sidebar - Genre Filter */}
           <aside className="lg:w-60 flex-shrink-0">
             <div className="lg:sticky lg:top-24">
