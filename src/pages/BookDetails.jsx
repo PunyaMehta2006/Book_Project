@@ -91,11 +91,11 @@ export default function BookDetails({ books }) {
         {/* Cover Image */}
         <div className="lg:w-80 flex-shrink-0">
           <div className="sticky top-24">
-            <div className="bg-warm-white rounded-2xl border border-warm-border overflow-hidden shadow-card">
+            <div className="bg-warm-white rounded-2xl border border-warm-border shadow-card flex items-center justify-center p-5">
               <img
                 src={book.image}
                 alt={`Cover of ${book.title}`}
-                className="w-full h-auto max-h-[420px] object-cover"
+                className="w-full max-h-[420px] h-auto object-contain object-center"
                 onError={(e) => {
                   e.target.src =
                     "https://via.placeholder.com/300x400/FAF7F2/1C1C1C?text=No+Cover";

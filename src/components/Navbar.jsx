@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-cream/80 backdrop-blur-md border-b border-warm-border shadow-navbar">
+    <nav className="sticky top-0 z-50 border-b border-warm-border bg-cream/85 shadow-navbar backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -10,7 +10,7 @@ export default function Navbar() {
             to="/"
             className="flex items-center gap-2 no-underline group"
           >
-            <span className="text-2xl sm:text-3xl font-heading font-bold text-charcoal tracking-tight group-hover:text-terracotta transition-colors duration-300">
+            <span className="text-2xl sm:text-3xl font-heading font-bold text-charcoal tracking-tight transition-colors duration-200 ease-out group-hover:text-terracotta">
               PageTurn
             </span>
             <span className="text-2xl" role="img" aria-label="book">
@@ -21,7 +21,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <Link
             to="/add-book"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-terracotta text-white font-body font-semibold text-sm rounded-lg hover:bg-terracotta-dark transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 no-underline"
+            className="inline-flex items-center gap-2 rounded-xl bg-terracotta px-5 py-2.5 font-body text-sm font-semibold text-white no-underline transition-[background-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:bg-terracotta-dark hover:shadow-lg"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

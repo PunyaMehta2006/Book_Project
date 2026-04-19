@@ -6,17 +6,17 @@ export default function BookCard({ book }) {
   return (
     <article
       onClick={() => navigate(`/book/${book.id}`)}
-      className="group cursor-pointer bg-warm-white rounded-xl border border-warm-border overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover shadow-card"
+      className="group cursor-pointer overflow-hidden rounded-2xl border border-warm-border bg-warm-white shadow-card transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:shadow-card-hover"
       role="link"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && navigate(`/book/${book.id}`)}
     >
       {/* Cover Image */}
-      <div className="relative overflow-hidden bg-cream-dark">
+      <div className="relative flex items-center justify-center overflow-hidden bg-cream-dark px-4 py-4 min-h-[220px]">
         <img
           src={book.image}
           alt={`Cover of ${book.title}`}
-          className="w-full h-[220px] object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-[220px] w-full object-contain object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]"
           loading="lazy"
           onError={(e) => {
             e.target.src =
@@ -32,24 +32,24 @@ export default function BookCard({ book }) {
       </div>
 
       {/* Card Content */}
-      <div className="p-4">
+      <div className="px-6 py-7 sm:px-7 sm:py-7">
         {/* Genre Chip */}
-        <span className="inline-block bg-sage-light/30 text-sage-dark text-xs font-body font-medium px-3 py-1 rounded-full mb-2">
+        <span className="mb-3 inline-block rounded-full bg-sage-light/30 px-3 py-1 font-body text-xs font-medium text-sage-dark">
           {book.genre}
         </span>
 
         {/* Title */}
-        <h3 className="font-heading text-lg font-semibold text-charcoal leading-snug mb-1 line-clamp-2 group-hover:text-terracotta transition-colors duration-300">
+        <h3 className="font-heading mb-2 line-clamp-2 text-lg font-semibold leading-snug text-charcoal transition-colors duration-200 ease-out group-hover:text-terracotta">
           {book.title}
         </h3>
 
         {/* Author */}
-        <p className="font-body text-sm text-charcoal-muted mb-3">
+        <p className="font-body mb-4 text-sm text-charcoal-muted">
           by {book.author}
         </p>
 
         {/* Price or Exchange */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between pt-0.5">
           {book.exchange ? (
             <span className="inline-flex items-center gap-1 text-sage-dark font-body font-semibold text-sm">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -64,7 +64,7 @@ export default function BookCard({ book }) {
           )}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 text-charcoal-muted group-hover:text-terracotta group-hover:translate-x-1 transition-all duration-300"
+            className="h-4 w-4 text-charcoal-muted transition-[color,transform] duration-200 ease-out group-hover:translate-x-0.5 group-hover:text-terracotta"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
