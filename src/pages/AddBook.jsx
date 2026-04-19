@@ -61,7 +61,7 @@ export default function AddBook({ onAddBook }) {
       description: form.description.trim(),
       image:
         form.image.trim() ||
-        "https://via.placeholder.com/300x400/FAF7F2/1C1C1C?text=No+Cover",
+        "https://via.placeholder.com/300x400/f8f6f3/2d2b29?text=No+Cover",
       seller: {
         name: "You",
         email: "your@email.com",
