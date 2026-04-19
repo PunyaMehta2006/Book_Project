@@ -34,12 +34,12 @@ export default function ReviewForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 text-center">
+    <form onSubmit={handleSubmit} className="space-y-6">
       {/* Name */}
       <div>
         <label
           htmlFor="review-name"
-          className="block font-body text-sm font-semibold text-charcoal mb-1.5"
+          className="block font-body text-sm font-medium text-charcoal mb-2"
         >
           Your Name
         </label>
@@ -52,7 +52,7 @@ export default function ReviewForm({ onSubmit }) {
             if (errors.name) setErrors((p) => ({ ...p, name: false }));
           }}
           placeholder="Enter your name"
-          className={`w-full px-4 py-3 rounded-xl border font-body text-sm bg-warm-white text-charcoal placeholder:text-charcoal-muted/50 outline-none transition-all duration-200 focus:ring-4 focus:ring-terracotta/10 focus:border-terracotta ${
+          className={`w-full px-4 py-3.5 rounded-lg border font-body text-sm bg-warm-white text-charcoal placeholder:text-charcoal-muted/50 outline-none transition-all duration-200 focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta ${
             errors.name ? "border-red-400 ring-2 ring-red-100" : "border-warm-border"
           }`}
         />
@@ -60,10 +60,10 @@ export default function ReviewForm({ onSubmit }) {
 
       {/* Star Rating */}
       <div>
-        <label className="block font-body text-sm font-semibold text-charcoal mb-1.5">
+        <label className="block font-body text-sm font-medium text-charcoal mb-2">
           Rating
         </label>
-        <div className="flex gap-1 justify-center">
+        <div className="flex gap-1">
           {[1, 2, 3, 4, 5].map((star) => (
             <button
               key={star}
@@ -92,7 +92,7 @@ export default function ReviewForm({ onSubmit }) {
           ))}
         </div>
         {errors.rating && (
-          <p className="text-red-500 text-xs font-body mt-1">
+          <p className="text-red-500 text-xs font-body mt-2">
             Please select a rating
           </p>
         )}
@@ -102,7 +102,7 @@ export default function ReviewForm({ onSubmit }) {
       <div>
         <label
           htmlFor="review-comment"
-          className="block font-body text-sm font-semibold text-charcoal mb-1.5"
+          className="block font-body text-sm font-medium text-charcoal mb-2"
         >
           Your Review
         </label>
@@ -115,7 +115,7 @@ export default function ReviewForm({ onSubmit }) {
           }}
           placeholder="Share your thoughts about this book..."
           rows={4}
-          className={`w-full px-4 py-3 rounded-xl border font-body text-sm bg-warm-white text-charcoal placeholder:text-charcoal-muted/50 outline-none transition-all duration-200 resize-none focus:ring-4 focus:ring-terracotta/10 focus:border-terracotta ${
+          className={`w-full px-4 py-3.5 rounded-lg border font-body text-sm bg-warm-white text-charcoal placeholder:text-charcoal-muted/50 outline-none transition-all duration-200 resize-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta ${
             errors.comment ? "border-red-400 ring-2 ring-red-100" : "border-warm-border"
           }`}
         />
@@ -124,7 +124,7 @@ export default function ReviewForm({ onSubmit }) {
       {/* Submit */}
       <button
         type="submit"
-        className="w-full py-3.5 bg-gradient-to-r from-terracotta to-terracotta-dark text-white font-body font-semibold text-sm rounded-xl hover:from-terracotta-dark hover:to-terracotta transition-all duration-300 hover:shadow-xl cursor-pointer"
+        className="w-full py-3 bg-terracotta text-white font-body font-semibold text-sm rounded-lg hover:bg-terracotta-dark transition-all duration-300 hover:shadow-lg cursor-pointer"
       >
         Submit Review
       </button>
