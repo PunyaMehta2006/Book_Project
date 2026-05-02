@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Page — soft bluish-gray (not flat white / beige) */
+  --color-cream: #e8eef6;
+  --color-cream-dark: #dbe5f2;
+  /* Body text — cool dark gray */
+  --color-charcoal: #334155;
+  --color-charcoal-light: #64748b;
+  --color-charcoal-muted: #8b9cb3;
+  /* Primary — modern sky blue (buttons, links, active) */
+  --color-terracotta: #0284c7;
+  --color-terracotta-dark: #0369a1;
+  --color-terracotta-light: #0ea5e9;
+  /* Secondary — emerald for chips / exchange (complements primary) */
+  --color-sage: #059669;
+  --color-sage-light: #a7f3d0;
+  --color-sage-dark: #047857;
+  /* Surfaces — cards lighter than page for separation */
+  --color-warm-white: #ffffff;
+  --color-warm-border: #c5d4e8;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --shadow-card: 0 3px 14px rgba(51, 65, 85, 0.08), 0 1px 4px rgba(51, 65, 85, 0.05);
+  --shadow-card-hover: 0 10px 28px rgba(2, 132, 199, 0.14), 0 4px 12px rgba(51, 65, 85, 0.08);
+  --shadow-navbar: 0 1px 12px rgba(51, 65, 85, 0.07);
+}
+
+/* Base resets */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-charcoal-muted);
+}
+
+/* Toast animation */
+@keyframes toast-in {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes toast-out {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0; }
+}
+
+.toast-enter {
+  animation: toast-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-exit {
+  animation: toast-out 0.3s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+/* Star rating styles */
+.star-rating-btn {
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.star-rating-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Page transitions */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Genre pills horizontal scroll on mobile */
+.genre-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.genre-scroll::-webkit-scrollbar {
+  display: none;
+}
